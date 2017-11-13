@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Директива DOCTYPE</title>
+
+    <script>
+        window.addEventListener("load",function(){
+            
+            var div = document.getElementById("div1");
+            var btn_down = document.getElementById("btn_down");
+            var btn_up = document.getElementById("btn_up");
+            var btn_left = document.getElementById("btn_left");
+            var btn_right = document.getElementById("btn_right");
+            var style = window.getComputedStyle(div);
+            var shift = 10;
+           btn_down.onclick = function()
+           {
+            div.style.marginTop = style.marginTop;
+            div.style.marginTop = parseInt(div.style.marginTop )+shift+"px";
+            
+           };
+           btn_up.onclick = function()
+           {
+            div.style.marginTop = style.marginTop;
+            div.style.marginTop = parseInt(div.style.marginTop )-shift+"px";
+            
+           };
+           btn_left.onclick = function()
+           {
+            div.style.marginLeft = style.marginLeft;
+            div.style.marginLeft = parseInt(div.style.marginLeft )-shift+"px";
+            
+           };
+           btn_right.onclick = function()
+           {
+            div.style.marginLeft = style.marginLeft;
+            div.style.marginLeft = parseInt(div.style.marginLeft )+shift+"px";
+            
+           };
+
+
+        });
+            
+    </script>      
+<style>  
+   #div1
+   {
+    height:25px;
+    width:25px; 
+    background-color: rgb(102, 201, 63);
+    margin-left: 80px;
+    margin-top: 100px;
+    position: absolute;
+   }
+
+   input
+   {
+    width:50px;
+    height: 20px;
+    position: absolute;
+   }
+
+   #btn_left
+   {
+    margin-left: 0px;
+    margin-top: 13px;
+   }
+   #btn_right
+   {
+    margin-left: 120px;
+    margin-top: 13px;
+   }
+   #btn_down
+   {
+    margin-left: 60px;
+    margin-top: 25px;
+   }
+   #btn_up
+   {
+    margin-left: 60px;
+    margin-top: 0px;
+   }
+
+
+
+</style>
+
+</head>
+
+
+<body>
+    <input id="btn_left" type="button" value="left">
+    <input id="btn_right" type="button" value="right">
+    <input id="btn_up" type="button" value="up"> 
+    <input id="btn_down" type="button" value="down">
+
+    <div id="div1">   </div>
+</body>
+</html>
+

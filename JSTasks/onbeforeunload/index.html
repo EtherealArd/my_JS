@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Директива DOCTYPE</title>
+
+    <script>
+            
+    window.addEventListener("load",function(){
+        var area = document.getElementsByTagName("textarea")[0];
+        var save= document.getElementsByTagName("button")[0];
+        area.onchange = function()
+        {
+            window.onbeforeunload = function () {
+                        return "Вы уверены, что хотите закрыть окно?";
+                    }
+        }
+        area.onkeyup= function()
+        {
+            window.onbeforeunload = function () {
+                        return "Вы уверены, что хотите закрыть окно?";
+                    }
+        }
+
+        save.onclick = function()
+        {
+            window.onbeforeunload = null;
+            alert("All data was saved");
+        }
+
+    })              
+    </script>
+<style>
+</style>            
+</head>
+<body>
+        <textarea rows="4" cols="50"></textarea></body></br>
+    <button>save</button>
+</body>
+</html>
+
