@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>XMLHttpRequest</title>
+    <script>
+        window.onload = function ()
+        {
+            var xhr = new XMLHttpRequest();
+            var xhr2 = new XMLHttpRequest();
+            xhr.open("GET", "page1.html", true, );
+            xhr2.open("GET", "page2.html", true);
+
+            xhr.onreadystatechange = SetData;
+            xhr2.onreadystatechange = SetData;
+
+            function SetData() {
+                if (this.readyState == 4) {
+                    if (this.status == 200) {
+                        document.getElementById("output").innerHTML += this.responseText; 
+                    }
+                }
+            }
+
+            document.getElementById("btn").onclick = function ()
+            {
+                xhr.send();
+                xhr2.send();
+            }
+           
+        }
+
+    </script>
+</head>
+<body>
+<input id="btn" type="button" value="Download" />
+    <p id="output"></p>
+</body>
+</html>

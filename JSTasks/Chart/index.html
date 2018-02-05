@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8" />
+        <title>azaza</title>
+	<script src="BarChart.js"></script>	
+    </head>
+<script>
+        window.addEventListener("load", function () {
+            var chart = createBarChart([30, 6, 88, 10, 2, 45, 100, 150],
+                600,
+                300,
+                "green");
+
+            var container = document.getElementById("chartContainer");
+            container.appendChild(chart);
+
+        });
+    </script>
+    <body>
+            <div id="chartContainer"></div>
+    </body>
+</html>

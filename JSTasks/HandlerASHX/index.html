@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ajax</title>
+    <script>
+
+        window.onload = function ()
+        {
+            var postRequest = "";
+            var btn = document.getElementById("btn");
+            var operand1 = document.getElementById("op1");
+            var operand2 = document.getElementById("op2");
+            var operation = document.getElementById("operation");      
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", "CalcHandler.ashx");
+            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+            xhr.onreadystatechange = function ()
+            {
+                if (xhr.readyState == 4 && xhr.status == 200)
+                {
+                    document.getElementById("result").value = xhr.responseText;
+                }
+            }
+
+            btn.onclick = function ()
+            {
+                postRequest += operand1.id + "=" + operand1.value + "&" + operand2.id + "=" + operand2.value + "&" + operation.id + "=" + encodeURIComponent(operation.options[operation.selectedIndex].value);
+                xhr.send(postRequest);
+            }
+        }
+
+    </script>
+</head>
+<body>
+<input id="op1"type="text" value="10" />
+ <select id="operation">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+</select>
+<input id="op2" type="text" value="15" />
+</br>
+<input id="result" type="text" />
+</br>
+<input id="btn" type="button" value="Solve"/>
+
+
+</body>
+</html>
