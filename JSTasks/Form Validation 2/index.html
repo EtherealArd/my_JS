@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="style.css" type="text/css"/>
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <title>Form</title>
+    <script>
+      $(document).ready(function(){
+        var validator = new Validator();
+        $('#btn').on("click",function(){
+          var min;
+          var str = $('input[name="numbers"]').val();
+            var chars = str.split(',');   
+            var number = [];     
+            for(var i=0;i<chars.length;i++)
+            {
+              if(!isNaN(chars[i]))
+              number.ad = parseInt(chars[i]);
+              else i--;
+            }
+            min = number[0];
+            for(var i=0;i<number.length;i++)
+            {
+              if(number[i]<min)
+              min = number[i];
+            }
+            alert(min);         
+        })      
+      });
+      function Validator()
+      {
+        this.SetPropeties();
+      }
+
+      Validator.prototype.SetPropeties = function()
+      {
+        $('input[name="email"]').attr("pattern",'[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$')
+      // $('input[name="password"]').attr("pattern",'/^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])([a-zA-Z0-9]{8})$/')
+        $('input[name="index"]').attr("pattern",'[0-9]{5}')
+        $('input[name="cit"]y').attr("pattern",'[a-zA-Zа-яА-Я]{0,25}')
+        $('input[name="fname"]').attr("pattern",'[a-zA-Zа-яА-Я]{0,25}')
+        $('input[name="lname"]').attr("pattern",'[a-zA-Zа-яА-Я]{0,25}')
+      }
+    
+
+    </script>
+
+
+  </head>
+  <body>
+      <form>
+         <fieldset>
+            <label for="fname">Імʼя</label>
+            <input type="text" name="fname" id="fname" placeholder="Ваше імʼя" required ><span></span><br>
+            <label for="lname">Прізвище</label>
+            <input type="text" name="lname" id="lname" placeholder="Ваше прізвище" required><span></span><br>
+            <label for="city">Місто</label>
+            <input type="text" name="city" id="city" placeholder="Ваше місто" required><span></span><br>
+            <label for="index">Індекс</label>
+            <input type="text" name="index" id="index" placeholder="індекс" required><span></span><br>
+         </fieldset>
+         <fieldset>
+            <label for="email">Ел. пошта</label>
+            <input type="text" name="email" id="email" placeholder="Ваша електронна адреса" required><span></span><br>
+            <label for="password"> Пароль</label>
+            <input type="password" name="password" id="password"  placeholder="Ваш пароль" required><span></span><br>
+            <label for="password"> Повторіть</label>
+            <input type="password1" name="password" id="confirm_password"  placeholder="Підтвердження паролю" required><span></span>
+         </fieldset>
+            <p>Введіть цілі числа для знаходженння мінімального значаення</p>
+            <input type="text" name="numbers" id="number"></br>
+            <input id="btn" type="button"  name="Min" value="Minumum value" /></br>
+            <input type="submit"  name="Submit" value="Submit" />
+      </form>
+  </body>
+</html>

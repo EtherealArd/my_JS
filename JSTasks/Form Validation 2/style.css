@@ -1,0 +1,72 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+ }
+ 
+ body {
+    margin: 30px;
+ }
+ 
+ input {
+    padding: 12px 20px;
+    margin: 8px 0;
+    width: 300px;
+    border: 2px solid #ccc;
+    outline: none;
+ }
+ 
+ input::placeholder {
+    font-size: 11px;
+ }
+ 
+ input:focus {
+    border: 3px solid #555;
+ }
+ 
+ label {
+    display: inline-block;
+    width: 150px;
+    padding: 25px;
+ }
+ 
+ form {
+    border: 2px solid #ccc;
+ }
+ 
+ fieldset {
+    border: none;
+    padding-bottom: 50px;
+ }
+ 
+ p {
+    padding-left: 25px;
+ }
+ 
+ input:invalid + span::after {
+    content: '×';
+    color: red;
+    padding-left: 10px;
+ }
+ 
+ input:valid + span::after {
+    content: "✓";
+    color: green;
+    padding-left: 10px;
+ }
+ 
+ input#number:invalid + span::after {
+    content:  '× Неправильнe число';
+    color: red;
+ }
+ input#number:valid + span::after {
+    content:  '✓';
+    color: green;
+ }
+ 
+ img {
+    position: relative;
+    top: 22px;
+    left:20px;
+ }
+ 
