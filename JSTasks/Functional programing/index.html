@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="utf-8" />
+    <title>Form</title>
+    <script>
+      var animals = ["dog","cat","dog","cat","bunny","dog","coat","tiger","owl","dog","owl"];
+      console.log(animals);
+      var dogs = animals.filter(animals=>animals==="dog");//filter
+      console.log(dogs);
+
+      function distinct(value,index,self)
+      {
+        return self.indexOf(value) === index;
+      }
+      var unique = animals.filter((v, i, a) => a.indexOf(v) === i); //es6 filter
+      var dist = animals.filter(distinct);
+      console.log(dist);
+      var counter=0;
+      for(var i=0;i<animals.length;i++)
+      {
+        var index = animals.indexOf(animals[i]);
+        if(index==i)
+        counter++;
+      }
+      console.log(counter);
+
+      var animalses6 = animals.map(animal=>animal);//es6 map
+      console.log("map es6- "+animalses6);
+
+      var animalses5 = animals.map(function(animal){
+        return animal;//es5 map
+      })
+      console.log("map es5- "+animalses6);
+
+      var arr = [25,50,75,100,150];
+      var sum = arr.reduce(function(sum,current){
+        return sum+current;//es5 reduce
+      },0);
+      console.log("es 5 sum is - "+sum);
+
+      var sumes6 = arr.reduce((sum,current)=>sum+current,0);//es6reduce
+      console.log("es 6 sum is - "+sumes6);
+
+    </script>
+  </head>
+  <body>       
+  </body>
+</html>
