@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="utf-8" />
+    <title>Form</title>
+    <script>
+      
+      (function(){
+        for(var i=0;i<3;i++)
+        {
+          console.log(i);
+        }
+      })();
+       // console.log("i -"+i);is not defined
+
+      (function(){
+        for(i=0;i<3;i++)
+        {
+          console.log(i);
+        }
+      })();
+      console.log("i -"+i);//output 3 because i has global scope
+      
+ 
+     var a =99;
+     (function(){
+      console.log(a);//99
+        for(a=0;a<3;a++)
+        {
+          console.log(a);
+        }
+        console.log(a);//3
+      })();
+      console.log("a -"+a);//output 3 because a is reassigned
+
+      var s =99;;
+     (function(){
+       console.log("s =="+s);//undefined
+        for(s=0;s<3;s++)
+        {
+          console.log(s);
+        }
+         var s=2;
+        console.log(s);//2
+      })();
+      console.log("a -"+s);//output 99
+      
+
+
+    </script>
+  </head>
+  <body>       
+  </body>
+</html>
