@@ -16,8 +16,7 @@
             for(var i=0;i<chars.length;i++)
             {
               if(!isNaN(chars[i]))
-              number.ad = parseInt(chars[i]);
-              else i--;
+              number.push(parseInt(chars[i]));             
             }
             min = number[0];
             for(var i=0;i<number.length;i++)
@@ -36,9 +35,9 @@
       Validator.prototype.SetPropeties = function()
       {
         $('input[name="email"]').attr("pattern",'[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$')
-      // $('input[name="password"]').attr("pattern",'/^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])([a-zA-Z0-9]{8})$/')
+        $('input[name="password"]').attr("pattern",'[a-zA-Zа-яА-Я]{0,25}')
         $('input[name="index"]').attr("pattern",'[0-9]{5}')
-        $('input[name="cit"]y').attr("pattern",'[a-zA-Zа-яА-Я]{0,25}')
+        $('input[name="city"]').attr("pattern",'[a-zA-Zа-яА-Я]{0,25}')
         $('input[name="fname"]').attr("pattern",'[a-zA-Zа-яА-Я]{0,25}')
         $('input[name="lname"]').attr("pattern",'[a-zA-Zа-яА-Я]{0,25}')
       }
