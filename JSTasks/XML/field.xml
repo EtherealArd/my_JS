@@ -1,0 +1,24 @@
+<Fields>
+    <Field id="1">
+        <FieldNumber>№1</FieldNumber>
+        <HumusContent> 1,2 </HumusContent>
+        <Culture> Corn </Culture>
+        <CultivarType>Plowing</CultivarType>
+        <Minerals>30 </Minerals>
+    </Field>
+    <Field id="2">
+        <FieldNumber>№2</FieldNumber>
+        <HumusContent> 3.6 </HumusContent>
+        <Culture> Millet </Culture>
+        <CultivarType>no-till</CultivarType>
+        <Minerals>35 </Minerals>
+    </Field>
+    <Field id="3">
+        <FieldNumber>№3</FieldNumber>
+        <HumusContent> 0.8 </HumusContent>
+        <Culture> Paise </Culture>
+        <CultivarType>mini-till</CultivarType>
+        <Minerals>25 </Minerals>
+    </Field>
+</Fields>
+
